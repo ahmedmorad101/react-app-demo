@@ -13,8 +13,7 @@ pipeline {
             steps{
                 sh '''
                 npm ci
-                #npm run build
-                pwd
+                npm run build
                 ls -la
                 '''
             }
