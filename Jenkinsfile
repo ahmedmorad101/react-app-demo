@@ -54,6 +54,7 @@ pipeline {
                 npm install netlify-cli -g
                 netlify --version
                 netlify status
+                netlify deploy --dir=dist --prod
                 '''
             }
         }
