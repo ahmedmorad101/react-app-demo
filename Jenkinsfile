@@ -20,9 +20,17 @@ pipeline {
         }
 
         stage('Test'){
+            agent {
+                docker{
+                    image 'node:22'
+                    args '-u root:root'
+                    reuseNode true
+                }
+            }
             steps{
                 sh '''
                 test -f dist/index.html
+                npm test
                 '''
             }
         }
