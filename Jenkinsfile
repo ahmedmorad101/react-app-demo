@@ -1,6 +1,11 @@
 pipeline { 
     agent any
 
+    environment{
+        NETLIFY_SITE_ID = '22efd7a8-63fc-45d5-a561-c633de352045'
+        NETLIFY_AUTH_TOKEN = credentials('netlify-token')
+    }
+
     stages {
         stage('Build'){
             agent {
@@ -48,6 +53,7 @@ pipeline {
                 sh '''
                 npm install netlify-cli -g
                 netlify --version
+                netlify status
                 '''
             }
         }
