@@ -18,5 +18,13 @@ pipeline {
                 '''
             }
         }
+
+        stage('Test'){
+            steps{
+                sh '''
+                test -f dist/index.html
+                '''
+            }
+        }
     }
 }
