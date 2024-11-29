@@ -13,7 +13,7 @@ pipeline {
                 sh '''
                 #npm ci
                 #npm run build
-                ls -la /home/node
+                ls -la
                 '''
             }
         }
